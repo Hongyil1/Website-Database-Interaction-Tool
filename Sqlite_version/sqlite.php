@@ -9,8 +9,8 @@
     $note = $_POST['notes'];
     $owner = $_POST['owners'];
 
-    $dbname = 'kentproj';
-    $tbname = 'proj_table';
+    $dbname = 'your_database_name';
+    $tbname = 'your_table_name';
 
     //Create connection
     try{
