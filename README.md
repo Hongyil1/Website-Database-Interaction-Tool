@@ -19,7 +19,13 @@ For Mysql version:
 ```
 python3 Main_Mysql.py -f Final_result.csv -hs localhost -u root -p abc123 -db test_db -tb test_table
 ```
--f
+-f is the file you want to input to the database<br>
+-hs is the host of your MySQL database<br>
+-u is the user of your database<br>
+-p is the password
+-db is the name of the database you want to create or use (if already exist)
+-tb is the name of table
+
 For Sqlite version:</b>
 ```
 sudo python3 Main_SQLite.py -db mysqlite -tb my_table -f Final_result.csv
