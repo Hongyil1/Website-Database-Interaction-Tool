@@ -12,10 +12,11 @@
     // echo $note;
 
     // Read the first line of mysql
-    $servername = "your_server_name"; //localhost
-    $username = "your_user_name"; //root
-    $password = "your_password";
-    $dbname = "your_database";
+    $servername = "localhost";
+    $username = "root";
+    $password = "abc123";
+    $dbname = "kentproj";
+    $tbname = "proj_table";
 
     //Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -27,9 +28,9 @@
     if($_POST['notes']){
       echo "Submit button";
       // Write notes to the mysql database
-      $sql = "UPDATE proj_table SET notes='$note' WHERE id=$id";
+      $sql = "UPDATE $tbname SET notes='$note' WHERE id=$id";
       $conn->query($sql);
-      $sql = "select * from proj_table where id = $id";
+      $sql = "select * from $tbname where id = $id";
       $result = $conn->query($sql);
       $row = $result->fetch_assoc();
       $new_note = $row['notes'];
@@ -39,7 +40,7 @@
       echo "Next button\n";
 
       // query in mysql
-      $sql = "select * from proj_table where id = $id";
+      $sql = "select * from $tbname where id = $id";
       $result = $conn->query($sql);
       if ($result->num_rows > 0) {
         // output data of each row

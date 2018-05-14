@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <?php
 // Read the first line of mysql
-$servername = "your_server_name"; //localhost
-$username = "your_username"; //root
-$password = "your_password"; 
-$dbname = "your_database_name"; 
+$servername = "localhost";
+$username = "root";
+$password = "abc123";
+$dbname = "kentproj";
+$tbname = "proj_table";
 
 //Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,14 +15,14 @@ if ($conn->connect_error) {
 }
 
 // Find the first id
-$sql = "select MIN(id),MAX(id) from proj_table";
+$sql = "select MIN(id),MAX(id) from $tbname";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 $min_id = $row['MIN(id)'];
 $max_id = $row['MAX(id)'];
 
 // $id = 23;
-$sql = "select * from proj_table where id = $min_id";
+$sql = "select * from $tbname where id = $min_id";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
