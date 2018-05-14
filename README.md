@@ -22,17 +22,17 @@ python3 Main_Mysql.py -f Final_result.csv -hs localhost -u root -p abc123 -db te
 -f is the file you want to input to the database<br>
 -hs is the host of your MySQL database<br>
 -u is the user of your database<br>
--p is the password
--db is the name of the database you want to create or use (if already exist)
--tb is the name of table
+-p is the password<br>
+-db is the name of the database you want to create or use (if already exist)<br>
+-tb is the name of table<br>
 
 **For Sqlite version:**
 ```
 sudo python3 Main_SQLite.py -db mysqlite -tb my_table -f Final_result.csv
 ```
--db is the database file name
--tb is the table name
--f is the file you want to input to your database
+-db is the database file name<br>
+-tb is the table name<br>
+-f is the file you want to input to your database<br>
 
 5. Operate in the webpage
 
