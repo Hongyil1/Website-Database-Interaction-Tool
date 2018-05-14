@@ -15,7 +15,7 @@
 3. Change the database username, password in Mysql python script (No need for Sqlite version).
 4. Run the Python Script to input the data in .csv file to database (Mysql/Sqlite).
 
-** For Mysql version: **
+**For Mysql version:**
 ```
 python3 Main_Mysql.py -f Final_result.csv -hs localhost -u root -p abc123 -db test_db -tb test_table
 ```
@@ -26,7 +26,7 @@ python3 Main_Mysql.py -f Final_result.csv -hs localhost -u root -p abc123 -db te
 -db is the name of the database you want to create or use (if already exist)
 -tb is the name of table
 
-** For Sqlite version:</b> **
+**For Sqlite version:**
 ```
 sudo python3 Main_SQLite.py -db mysqlite -tb my_table -f Final_result.csv
 ```
