@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <?php
+$dbname = 'kentproj';
+$tbname = 'proj_table';
+
+
 try{
-  $db = new SQLite3('kentproj');
+  $db = new SQLite3($dbname);
 }catch(Exception $e){
   echo $e->getMessage();
 }
-$sql = "select MIN(id),MAX(id) from proj_table";
+$sql = "select MIN(id),MAX(id) from $tbname";
 
 $result = $db->query($sql);
 try{
@@ -19,7 +23,7 @@ $max_id = $row['MAX(id)'];
 // echo $min_id;
 // echo $max_id;
 
-$sql = "select * from proj_table where id = $min_id";
+$sql = "select * from $tbname where id = $min_id";
 $result = $db->query($sql);
 try{
   // output data of each row

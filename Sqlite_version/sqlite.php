@@ -5,17 +5,16 @@
 </head>
 <body>
   <?php
-    // // $q = $_POST['id'];
-    // echo "$q";
     $id = $_POST['id'];           # prints "value"
     $note = $_POST['notes'];
     $owner = $_POST['owners'];
-    // echo $note;
-    // echo $id;
+
+    $dbname = 'kentproj';
+    $tbname = 'proj_table';
 
     //Create connection
     try{
-      $db = new SQLite3('kentproj');
+      $db = new SQLite3($dbname);
     }catch(Exception $e){
       echo $e->getMessage();
     }
@@ -23,10 +22,10 @@
     if($_POST['notes']){
       echo "Note Submit button\n";
       // Write notes to the mysql database
-      $sql = "UPDATE proj_table SET notes='$note' WHERE id=$id";
+      $sql = "UPDATE $tbname SET notes='$note' WHERE id=$id";
       $db->query($sql);
 
-      $sql = "select * from proj_table where id = $id";
+      $sql = "select * from $tbname where id = $id";
       $result = $db->query($sql);
       $row = $result->fetchArray(SQLITE3_ASSOC);
       $new_note = $row['notes'];
@@ -35,9 +34,9 @@
     if($_POST['owners']){
       echo "Owner Submit button";
       // Write notes to the mysql database
-      $sql = "UPDATE proj_table SET owner='$owner' WHERE id=$id";
+      $sql = "UPDATE $tbname SET owner='$owner' WHERE id=$id";
       $db->query($sql);
-      $sql = "select * from proj_table where id = $id";
+      $sql = "select * from $tbname where id = $id";
       $result = $db->query($sql);
       $row = $result->fetchArray(SQLITE3_ASSOC);
       $new_owner = $row['owner'];
@@ -47,7 +46,7 @@
       // echo "Next button\n";
 
       // query in mysql
-      $sql = "select * from proj_table where id = $id";
+      $sql = "select * from $tbname where id = $id";
       $result = $db->query($sql);
 
       // output data of each row
