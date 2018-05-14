@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
 // Read the first line of mysql
-$servername = "localhost";
-$username = "root";
-$password = "abc123";
-$dbname = "kentproj";
-$tbname = "proj_table";
+$servername = "your_server_name"; //localhost
+$username = "your_user_name"; //root
+$password = "your_password";
+$dbname = "your_database_name";
+$tbname = "your_table_name";
 
 //Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
