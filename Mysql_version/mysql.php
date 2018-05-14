@@ -12,10 +12,10 @@
     // echo $note;
 
     // Read the first line of mysql
-    $servername = "localhost";
-    $username = "root";
-    $password = "abc123";
-    $dbname = "kentproj";
+    $servername = "your_server_name"; //localhost
+    $username = "your_user_name"; //root
+    $password = "your_password";
+    $dbname = "your_database";
 
     //Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
