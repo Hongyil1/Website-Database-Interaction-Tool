@@ -1,7 +1,14 @@
 import MySQLdb
 import webbrowser
+import argparse
 
-db = MySQLdb.connect(host="localhost", user="kent", passwd="abc123")
+parser = argparse.ArgumentParser(description="Choose the file name")
+parser.add_argument('-f', dest='file', help='Input the file name')
+parser.add_argument('-h', dest='host', help='host of Mysql')
+parser.add_argument('-u', dest='user', help='user of Mysql')
+parser.add_argument('-p', dest='password', help='password of Mysql')
+
+db = MySQLdb.connect(host=results.host, user=results.user, passwd=results.password)
 cur = db.cursor()
 
 # create table
@@ -11,7 +18,7 @@ cur.execute("use kentproj;")
 cur.execute("create table IF NOT EXISTS proj_table(id INT PRIMARY KEY, url varchar(70), notes varchar(100), owner varchar(70), cms varchar(70));")
 
 # Read from result.csv
-with open('Final_result.csv') as f:
+with open(results.file) as f:
     for i, line in enumerate(f):
         if i > 0:
             line_list = line.split(",")
@@ -25,5 +32,5 @@ with open('Final_result.csv') as f:
 # cur.execute("insert into proj_table (url, notes, owner, cms) values('http://weboptimizers.com', 'This is not Magento', 'kent', 'Wordpress')")
 
 db.autocommit(on=True)
-webbrowser.open("http://127.0.0.1/project.php")
+webbrowser.open("http://127.0.0.1/project_mysql.php")
 print("Finish.")
