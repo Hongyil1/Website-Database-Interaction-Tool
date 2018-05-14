@@ -19,9 +19,10 @@ For Mysql version:
 ```
 python3 Main_Mysql.py -f Final_result.csv -hs localhost -u root -p abc123 -db test_db -tb test_table
 ```
+-f
 For Sqlite version:</b>
 ```
-
+sudo python3 Main_SQLite.py -db mysqlite -tb my_table -f Final_result.csv
 ```
 5. Operate in the webpage
 
