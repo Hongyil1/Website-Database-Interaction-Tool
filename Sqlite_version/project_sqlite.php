@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
-$dbname = 'kentproj';
-$tbname = 'proj_table';
+$dbname = 'your_database_file_name';
+$tbname = 'your_table_name';
 
 
 try{
