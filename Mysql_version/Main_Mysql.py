@@ -1,6 +1,6 @@
+import argparse
 import MySQLdb
 import webbrowser
-import argparse
 
 parser = argparse.ArgumentParser(description="Choose the file name")
 parser.add_argument('-f', dest='file', help='Input the file name')
@@ -30,8 +30,6 @@ with open(results.file) as f:
             id = i
             # print(id)
             cur.execute("insert IGNORE into {0} (id, url, notes, owner, cms) value('{1}', '{2}', 'None', 'None', '{3}')".format(results.tb_name, id, url, cms))
-# # insert data
-# cur.execute("insert into proj_table (url, notes, owner, cms) values('http://weboptimizers.com', 'This is not Magento', 'kent', 'Wordpress')")
 
 db.autocommit(on=True)
 webbrowser.open("http://127.0.0.1/project_mysql.php")
