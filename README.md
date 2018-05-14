@@ -16,7 +16,7 @@
 4. Run the Python Script to input the data in .csv file to database (Mysql/Sqlite).
 For Mysql version:</b>
 ```
-
+python3 Main_Mysql.py -f Final_result.csv -hs localhost -u root -p abc123 -db test_db -tb test_table
 ```
 For Sqlite version:</b>
 ```
