@@ -43,3 +43,4 @@ sudo python3 Main_SQLite.py -db mysqlite -tb my_table -f Final_result.csv
 ## License
 
 This project is licensed under the MIT License
+![demo](https://gfycat.com/DeadlyGranularIlladopsis)
