@@ -46,7 +46,7 @@ sudo python3 Main_SQLite.py -db mysqlite -tb my_table -f Final_result.csv
 
 ## Authors
 
-* **Hongyi Lin** - *Initial work* - [Hongyi Lin](https://github.com/Hongyil1)
+* **[Hongyi Lin](https://github.com/Hongyil1)** 
 
 ## License
 
